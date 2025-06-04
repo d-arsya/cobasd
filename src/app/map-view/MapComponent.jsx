@@ -38,8 +38,8 @@ function MapComponent() {
           );
         }
 
-        const needData = await needResponse.json();
-        const shareData = await shareResponse.json();
+        const needData = (await needResponse.json()).data;
+        const shareData = (await shareResponse.json()).data;
         console.log(needData)
         if (!Array.isArray(needData) || !Array.isArray(shareData)) {
           throw new Error("Format data tidak valid, seharusnya array.");
