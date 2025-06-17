@@ -42,7 +42,7 @@ export default function SignupPage() {
 
   return (
     <div className="flex justify-center flex-col min-h-screen items-center">
-      <div className="text-3xl">Bagi Makan - Admin Signup</div>
+      <div className="text-3xl">BBJ App - Admin Signup</div>
       <div className="mt-7">
         <Card className="w-[450px] mt-2 mb-7 mx-4">
           <CardBody className="space-y-8 my-3">
