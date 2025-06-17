@@ -7,14 +7,14 @@ import Image from "next/image";
 
 // Custom marker icons
 const needFoodIcon = new L.Icon({
-  iconUrl: "/icon/food_b.png",
+  iconUrl: "https://mobile-panel.berbagibitesjogja.com/icon/food_b.png",
   iconSize: [45, 45],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
 });
 
 const shareFoodIcon = new L.Icon({
-  iconUrl: "/icon/fast-food-burger.png",
+  iconUrl: "https://mobile-panel.berbagibitesjogja.com/icon/fast-food-burger.png",
   iconSize: [48, 48],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
