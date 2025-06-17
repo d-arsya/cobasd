@@ -96,7 +96,7 @@ function MapComponent() {
             <br />
             <strong>Tempat:</strong> {location.nama_tempat}
             <br />
-            <strong>Waktu:</strong> {location.waktu}
+            <strong>Waktu:</strong> {location.waktu} {location.tanggal}
             <br />
             <strong>Jumlah Makanan:</strong> {location.jumlah_makanan}
             <br />
@@ -124,7 +124,7 @@ function MapComponent() {
             <br />
             <strong>Diambil:</strong> {location.makanan_diambil}
             <br />
-            <strong>Waktu:</strong> {location.waktu}
+            <strong>Waktu:</strong> {location.waktu} {location.tanggal}
             <br />
             <strong>Jumlah Makanan:</strong> {location.jumlah_makanan}
             <br />
