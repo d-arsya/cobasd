@@ -29,7 +29,7 @@ export async function POST(req) {
         // const cookie = await cookies();
         // const token = await cookie.get('access_token').value;
         const { title, description } = await req.json();
-        const response = await axios.post(`${process.env.BACKEND_URL}/announcements/`, { title, description })
+        const response = await axios.post(`${process.env.BACKEND_URL}/announcements`, { title, description })
         // const response = await axios.post(`${process.env.BACKEND_URL}/announcements`, { title, description }, {
         //     headers: {
         //         Authorization: `Bearer ${token}`
