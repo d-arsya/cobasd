@@ -4,11 +4,11 @@ import { cookies } from 'next/headers';
 export async function GET() {
     try {
         const cookie = await cookies();
-        const token = await cookie.get('access_token').value;
+        // const token = await cookie.get('access_token').value;
         const response = await axios.get(`${process.env.BACKEND_URL}/food/share`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
+            // headers: {
+            //     Authorization: `Bearer ${token}`
+            // }
         })
         const data = await response.data
         return NextResponse.json({ data });

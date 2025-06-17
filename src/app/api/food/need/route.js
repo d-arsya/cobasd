@@ -5,7 +5,6 @@ export async function GET() {
     try {
         const response = await axios.get(`${process.env.BACKEND_URL}/food/need`)
         const data = await response.data
-        console.log(data)
         return NextResponse.json({ data });
 
     } catch (err) {
