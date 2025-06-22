@@ -135,6 +135,8 @@ function MapComponent() {
             <br />
             <strong>Kadaluwarsa:</strong> {location.tanggal_kadaluwarsa} {location.waktu_kadaluwarsa}
             <br />
+            <strong>Waktu baik diambil:</strong> {location.tanggal_anjuran} {location.waktu_anjuran}
+            <br />
             {location.image_url && (
               <div className="mt-2 flex justify-center">
                 <Image
