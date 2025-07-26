@@ -14,7 +14,8 @@ const needFoodIcon = new L.Icon({
 });
 
 const shareFoodIcon = new L.Icon({
-  iconUrl: "https://mobile-panel.berbagibitesjogja.com/icon/fast-food-burger.png",
+  iconUrl:
+    "https://mobile-panel.berbagibitesjogja.com/icon/fast-food-burger.png",
   iconSize: [48, 48],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
@@ -40,7 +41,7 @@ function MapComponent() {
 
         const needData = (await needResponse.json()).data;
         const shareData = (await shareResponse.json()).data;
-        console.log(needData)
+        console.log(needData);
         if (!Array.isArray(needData) || !Array.isArray(shareData)) {
           throw new Error("Format data tidak valid, seharusnya array.");
         }
@@ -104,6 +105,7 @@ function MapComponent() {
             {location.nomor_pencari})
             <br />
             <strong>Keterangan:</strong> {location.keterangan}
+            <a href={"https://maps.google.com?q=" + location.koordinat}>Maps</a>
           </Popup>
         </Marker>
       ))}
@@ -133,14 +135,21 @@ function MapComponent() {
             <br />
             <strong>Keterangan:</strong> {location.keterangan}
             <br />
-            <strong>Kadaluwarsa:</strong> {location.tanggal_kadaluwarsa} {location.waktu_kadaluwarsa}
+            <strong>Kadaluwarsa:</strong> {location.tanggal_kadaluwarsa}{" "}
+            {location.waktu_kadaluwarsa}
             <br />
-            <strong>Waktu baik diambil:</strong> {location.tanggal_anjuran} {location.waktu_anjuran}
+            <strong>Waktu baik diambil:</strong> {location.tanggal_anjuran}{" "}
+            {location.waktu_anjuran}
+            <br />
+            <a href={"https://maps.google.com?q=" + location.koordinat}>Maps</a>
             <br />
             {location.image_url && (
               <div className="mt-2 flex justify-center">
                 <Image
-                  src={"https://mobile-be.berbagibitesjogja.com" + location.image_url}
+                  src={
+                    "https://mobile-be.berbagibitesjogja.com" +
+                    location.image_url
+                  }
                   alt="Food"
                   width={150}
                   height={150}

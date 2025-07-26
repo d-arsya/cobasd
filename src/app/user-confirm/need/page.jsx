@@ -180,7 +180,7 @@ export default function UserConfirm() {
               {(columnKey) => {
                 if (columnKey === "actions") {
                   return (
-                    <TableCell className="space-x-4">
+                    <TableCell className="flex flex-col justify-center gap-4">
                       {item.status === "Pending" && (
                         <>
                           <Button
@@ -203,15 +203,15 @@ export default function UserConfirm() {
                       )}
                       {(item.status === "Accepted" ||
                         item.status === "Rejected") && (
-                          <Button
-                            onClick={() => handleDelete(item)}
-                            color="danger"
-                            radius="sm"
-                            className="text-white"
-                          >
-                            Delete
-                          </Button>
-                        )}
+                        <Button
+                          onClick={() => handleDelete(item)}
+                          color="danger"
+                          radius="sm"
+                          className="text-white"
+                        >
+                          Delete
+                        </Button>
+                      )}
                     </TableCell>
                   );
                 }

@@ -45,12 +45,12 @@ export default function UserConfirm() {
       const response = await fetch("/api/food/share");
       if (!response.ok) throw new Error("Failed to fetch data");
       const result = await response.json();
-      console.log(result)
+      console.log(result);
       const processedData = Array.isArray(result.data)
         ? result.data.map((item, index) => ({
-          ...item,
-          id: item.id || `temp-${index}`,
-        }))
+            ...item,
+            id: item.id || `temp-${index}`,
+          }))
         : [];
 
       setData(processedData);
@@ -89,10 +89,9 @@ export default function UserConfirm() {
 
   const handleDelete = async (item) => {
     try {
-      const response = await fetch(
-        `/api/food/share/${item.id}`,
-        { method: "DELETE" }
-      );
+      const response = await fetch(`/api/food/share/${item.id}`, {
+        method: "DELETE",
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -134,7 +133,7 @@ export default function UserConfirm() {
               {(columnKey) => {
                 if (columnKey === "actions") {
                   return (
-                    <TableCell className="space-x-4">
+                    <TableCell className="flex flex-col justify-center gap-4">
                       {item.status === "Pending" && (
                         <>
                           <Button
@@ -157,15 +156,15 @@ export default function UserConfirm() {
                       )}
                       {(item.status === "Accepted" ||
                         item.status === "Rejected") && (
-                          <Button
-                            onClick={() => handleDelete(item)}
-                            color="danger"
-                            radius="sm"
-                            className="text-white"
-                          >
-                            Delete
-                          </Button>
-                        )}
+                        <Button
+                          onClick={() => handleDelete(item)}
+                          color="danger"
+                          radius="sm"
+                          className="text-white"
+                        >
+                          Delete
+                        </Button>
+                      )}
                     </TableCell>
                   );
                 }
